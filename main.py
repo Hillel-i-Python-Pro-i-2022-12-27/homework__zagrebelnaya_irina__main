@@ -1,7 +1,7 @@
 def hello(value):
     """is param complex number"""
     value = 1 + 2
-    value = "gjhfhgwjf"
+    value = "test"
     return "Hello" + value
 
 
