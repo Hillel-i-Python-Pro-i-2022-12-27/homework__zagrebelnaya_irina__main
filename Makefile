@@ -14,34 +14,38 @@ pre-commit-run:
 pre-commit-run-all:
 	@pre-commit run --all-files
 
-.PHONY: homework-i-run
-# run homework.
-homework-i-run:
-	make c-run
+# Run homework in docker.
+d-homework-i-run:
+	make d-run
 
-.PHONY: homework-i-purge
-# Purge homework.
-homework-i-prune:
-	@make c-prune
+.PHONY: d-homework-i-purge
+# Prune homework in docker
+d-homework-i-purge:
+	@make d-purge
 
-.PHONY: c-run
-c-run:
+.PHONY: d-run
+# Run
+d-run:
 	@COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 \
 		docker compose up --build
 
-.PHONY: c-stop
-c-stop:
+.PHONY: d-stop
+# Stop services
+d-stop:
 	@COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 \
 		docker compose down
 
-.PHONY: c-prune
-c-prune:
+.PHONY: d-purge
+# Purge all services
+d-purge:
 	@COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 \
 		docker compose down --volumes --remove-orphans --rmi local --timeout 0
+.PHONY: homework-i-run
+# Run homework without docker.
+homework-i-run:
+	@python main.py
 
-
-#without docker
-.PHONY: wd-homework-i-run
-wd-homework-i-run:
-	@python3 main.py
+.PHONY: homework-i-purge
+homework-i-purge:
+	@echo Bye
 
