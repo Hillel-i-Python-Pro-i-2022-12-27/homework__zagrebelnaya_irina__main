@@ -7,13 +7,13 @@ def random_choice() -> str:
     return random.choice(array)
 
 
-def print_value() -> str:
+def return_value() -> str:
     result = random_choice()
     return f"Your random choice is {result}!"
 
 
 def main() -> None:
-    print(print_value())
+    print(return_value())
 
 
 if __name__ == "__main__":
