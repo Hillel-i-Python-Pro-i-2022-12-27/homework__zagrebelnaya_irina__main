@@ -1,20 +1,13 @@
-import random
-
-
-def random_choice() -> str:
-    """random_choice return"""
-    array = ["2", "109", "False", "10", "Lorem", "482", "Ipsum"]
-    return random.choice(array)
-
-
-def return_value() -> str:
-    result = random_choice()
-    return f"Your random choice is {result}!"
-
-
-def main() -> None:
-    print(return_value())
-
+from application.body.requesttoapi import get_astronaut_from_json
+from application.body.write_to_file import write_users_into_file, write_average_data_into_file
+from application.body.actions_with_files import to_create_file, to_read_file
+import asyncio
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(get_astronaut_from_json())
+    write_users_into_file(filename="generated_users", count=100)
+    write_average_data_into_file(
+        filename="average", link="https://drive.google.com/uc?export=download&id=13nk_FYpcayUck2Ctrela5Tjt9JQbjznt"
+    )
+    to_create_file(file_name="text")
+    to_read_file(file_name="text")
