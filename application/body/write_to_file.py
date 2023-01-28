@@ -1,6 +1,6 @@
 from application.config.paths import FILES_OUTPUT_PATH
 from application.body.usersgenerator import generate_users
-from application.body.requesttoapi import get_csv_file_data_and_calculate
+from application.body.request_to_api import get_csv_file_data_and_calculate
 
 
 def write_users_into_file(filename: str = None, count: int = 100) -> None:
