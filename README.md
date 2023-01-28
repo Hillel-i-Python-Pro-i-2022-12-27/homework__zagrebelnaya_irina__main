@@ -33,4 +33,3 @@ Purge all data related with services
 ```shell
 make d-homework-i-purge
 ```
-ne
