@@ -1,4 +1,4 @@
-from application.body.requesttoapi import get_astronaut_from_json
+from application.body.request_to_api import get_astronaut_from_json
 from application.body.write_to_file import write_users_into_file, write_average_data_into_file
 from application.body.actions_with_files import to_create_file, to_read_file
 import asyncio
